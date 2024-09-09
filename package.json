@@ -14,7 +14,8 @@
     "test:ci": "vitest run --coverage",
     "test:ci-e2e": "playwright test",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@unhead/vue": "1.10.0",
@@ -75,14 +76,10 @@
     "vue-tsc": "2.1.2",
     "wait-on": "8.0.0"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": ["pnpm run lint", "npm test", "git add"]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "pnpm test"
-    }
+ "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ]
   },
   "pnpm": {
     "overrides": {
