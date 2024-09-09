@@ -56,7 +56,9 @@
     "eslint-plugin-promise": "7.1.0",
     "eslint-plugin-security": "3.0.1",
     "eslint-plugin-vue": "9.28.0",
+    "husky": "^9.1.5",
     "jsdom": "25.0.0",
+    "lint-staged": "^15.2.10",
     "lodash-es": "4.17.21",
     "npm-run-all2": "6.2.0",
     "postcss": "8.4.38",
@@ -72,6 +74,15 @@
     "vitest": "2.0.3",
     "vue-tsc": "2.1.2",
     "wait-on": "8.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": ["pnpm run lint", "npm test", "git add"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "pnpm test"
+    }
   },
   "pnpm": {
     "overrides": {
