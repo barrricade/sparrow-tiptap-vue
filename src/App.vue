@@ -1,16 +1,13 @@
 <template>
   <div id="app">
-    <SparrowTiptap />
+    <SparrowTiptap :content="content" />
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
   import SparrowTiptap from './components/SparrowTiptap.vue'
-
-  export default {
-    name: 'App',
-    components: {
-      SparrowTiptap,
-    },
-  }
+  import { ref } from 'vue'
+  const content = ref<string>("hello world");
 </script>
+<style scoped lang="sass">
+</style>
