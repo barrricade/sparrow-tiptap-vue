@@ -18,6 +18,10 @@
     "lint-staged": "lint-staged"
   },
   "dependencies": {
+    "@tiptap/core": "^2.6.6",
+    "@tiptap/pm": "^2.6.6",
+    "@tiptap/starter-kit": "^2.6.6",
+    "@tiptap/vue-3": "^2.6.6",
     "@unhead/vue": "1.10.0",
     "pinia": "2.2.0",
     "vue": "3.5.3",
@@ -76,7 +80,7 @@
     "vue-tsc": "2.1.2",
     "wait-on": "8.0.0"
   },
- "lint-staged": {
+  "lint-staged": {
     "*.{js,ts,vue}": [
       "eslint --fix"
     ]
